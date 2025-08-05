@@ -14,7 +14,26 @@ model = joblib.load('fraud_detection_pipeline.pkl')
 
 st.title('Online Fraud Detection Application')
 
+if st.checkbox('📈 Show EDA Plots'):
+    st.subheader('Exploratory Data Analysis (EDA) Plots')
 
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.image("1.png", caption="Transaction Types", use_container_width=True)
+    with col2:
+        st.image("2.png", caption="Fraud Rate by Type", use_container_width=True)
+    with col3:
+        st.image("3.png", caption="Fraud Type Count", use_container_width=True)
+
+    col4, col5, col6 = st.columns(3)
+    with col4:
+        st.image("4.png", caption="Log Amount Distribution", use_container_width=True)
+    with col5:
+        st.image("5.png", caption="Amount by Fraud", use_container_width=True)
+    with col6:
+        st.image("6.png", caption="Correlation Heatmap", use_container_width=True)
+        
+st.dialog('EDA plots are for demonstration purposes only.')
 
 st.subheader('Please enter the transaction details below:')
 
